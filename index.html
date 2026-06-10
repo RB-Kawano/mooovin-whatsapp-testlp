@@ -1,0 +1,1446 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+<title>WhatsAppで日本の賃貸物件をカンタンに｜Mooovin</title>
+<meta name="description" content="Mooovinなら、日本の賃貸物件探しがWhatsAppで完結。外国人の方OKの物件90,000件以上、英語・中国語など多言語対応、保証人不要、オンライン完結。">
+
+<!-- OGP -->
+<meta property="og:title" content="WhatsAppで日本の賃貸物件をカンタンに｜Mooovin" />
+<meta property="og:description" content="Mooovinなら、日本の賃貸物件探しがWhatsAppで完結。外国人の方OKの物件90,000件以上、英語・中国語など多言語対応、保証人不要、オンライン完結。" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   RESET / BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.8;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.4; font-weight: 700; letter-spacing: 0.01em; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+  --primary: #E11929;
+  --primary-dark: #B91524;
+  --primary-light: #FEEFF0;
+  --primary-soft: #FDF5F5;
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1EBE5A;
+  --text: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #767676;
+  --bg: #ffffff;
+  --bg-soft: #FAF7F5;
+  --border: #E8E5E0;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 48px rgba(225,25,41,0.18);
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; }
+@media (max-width: 768px) {
+  section { padding: 56px 0; }
+  .container, .container-narrow { padding: 0 20px; }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: inline-block;
+}
+.logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--whatsapp);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.header-cta:hover { background: var(--whatsapp-dark); }
+.header-cta svg { width: 16px; height: 16px; }
+@media (max-width: 540px) {
+  .header-cta span { display: none; }
+  .header-cta { padding: 10px; }
+  .header-cta svg { width: 18px; height: 18px; }
+  .logo img { height: 26px; }
+}
+
+/* ============================================
+   FLOATING CTA
+   ============================================ */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--whatsapp);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: floatPulse 3s ease-in-out infinite;
+}
+.floating-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+.floating-cta svg { width: 22px; height: 22px; }
+@keyframes floatPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.65); }
+}
+@media (max-width: 540px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    justify-content: center;
+    padding: 16px 22px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   HERO (full-bleed background with 2 images)
+   ============================================ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 100px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 0;
+}
+.hero-bg-img {
+  background-size: cover;
+  background-position: center;
+}
+.hero-bg-img.left {
+  background-image: url('./images/hero-single.jpg');
+  background-position: center 30%;
+}
+.hero-bg-img.right {
+  background-image: url('./images/hero-couple.jpg');
+  background-position: center 35%;
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0.78) 60%,
+      rgba(255,245,245,0.92) 100%);
+}
+.hero-bg-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 60%, rgba(255,255,255,0.4) 0%, transparent 60%);
+}
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+.hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-title {
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.3;
+  margin-bottom: 24px;
+  font-weight: 900;
+  letter-spacing: -0.005em;
+  color: #111;
+  text-shadow: 0 2px 20px rgba(255,255,255,0.6);
+}
+.hero-title .accent {
+  color: var(--primary);
+  position: relative;
+}
+.hero-title .accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 10px;
+  background: rgba(225,25,41,0.18);
+  z-index: -1;
+}
+.hero-lead {
+  font-size: 17px;
+  color: var(--text-mid);
+  margin-bottom: 36px;
+  line-height: 1.85;
+  font-weight: 500;
+}
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 36px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-feature {
+  background: rgba(255,255,255,0.96);
+  border: 1.5px solid rgba(225,25,41,0.18);
+  border-radius: 0;
+  padding: 18px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.hero-feature-num {
+  display: block;
+  font-size: 22px;
+  color: var(--primary);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.hero-feature-num small { font-size: 14px; font-weight: 800; }
+.hero-feature-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+.hero-cta-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 8px rgba(255,255,255,0.6);
+}
+.hero-cta-bubble::before,
+.hero-cta-bubble::after {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 900;
+  color: var(--primary);
+}
+.hero-cta-bubble::before { content: '＼'; }
+.hero-cta-bubble::after { content: '／'; }
+.hero-cta-wrap { display: flex; flex-direction: column; align-items: center; }
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 40px;
+  background: var(--whatsapp);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6);
+}
+.hero-cta svg { width: 24px; height: 24px; }
+.hero-cta-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 700px; padding: 60px 0 80px; }
+  .hero-bg { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .hero-bg-overlay {
+    background:
+      linear-gradient(180deg,
+        rgba(255,255,255,0.5) 0%,
+        rgba(255,255,255,0.7) 40%,
+        rgba(255,255,255,0.85) 70%,
+        rgba(255,245,245,0.95) 100%);
+  }
+}
+@media (max-width: 540px) {
+  .hero-features { grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 360px; }
+  .hero-feature { padding: 14px 8px; border-radius: 0; }
+  .hero-feature-num { font-size: 18px; }
+  .hero-feature-num small { font-size: 11px; }
+  .hero-feature-text { font-size: 11px; }
+  .hero-cta { width: 100%; justify-content: center; padding: 18px 24px; font-size: 16px; }
+  .hero-cta-bubble { font-size: 14px; }
+  .hero-cta-bubble::before, .hero-cta-bubble::after { font-size: 20px; }
+}
+
+/* ============================================
+   SECTION TITLE
+   ============================================ */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: 'DM Serif Display', sans-serif;
+}
+.section-title {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+.section-title .accent { color: var(--primary); }
+.section-lead {
+  font-size: 15px;
+  color: var(--text-mid);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+.section-header { text-align: center; margin-bottom: 56px; }
+@media (max-width: 540px) {
+  .section-header { margin-bottom: 40px; }
+}
+
+/* ============================================
+   PROBLEMS SECTION
+   ============================================ */
+.problems {
+  background: var(--bg-soft);
+  position: relative;
+}
+.problems-hero-image {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  border-radius: 0;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #efe9e2;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.problems-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 640px) {
+  .problems-hero-image { aspect-ratio: 4/3; margin-bottom: 36px; }
+}
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 880px;
+  margin: 0 auto 56px;
+}
+.problem-card {
+  background: #fff;
+  border-radius: 0;
+  padding: 28px 28px;
+  border: none;
+  position: relative;
+  box-shadow: 0 10px 28px -6px rgba(225, 25, 41, 0.14), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+.problem-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 4px;
+  left: 18px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.problem-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+.problems-arrow {
+  text-align: center;
+  margin: 0 auto;
+}
+.problems-arrow-icon {
+  display: block;
+  margin: 0 auto 20px;
+  width: 56px;
+  height: 76px;
+  color: var(--primary);
+  filter: drop-shadow(0 6px 12px rgba(225,25,41,0.25));
+}
+.problems-arrow-icon svg { width: 100%; height: 100%; display: block; }
+.problems-conclusion {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.5;
+}
+.problems-conclusion .accent { color: var(--primary); }
+@media (max-width: 640px) {
+  .problems-grid { grid-template-columns: 1fr; }
+  .problem-card { padding: 24px 24px; }
+  .problems-arrow-icon { width: 44px; height: 60px; }
+}
+
+/* ============================================
+   REASONS SECTION
+   ============================================ */
+.reasons-list {
+  display: grid;
+  gap: 32px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.reason-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 44px -10px rgba(225, 25, 41, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.reason-card.reverse { grid-template-columns: 1.2fr 1fr; }
+.reason-card.reverse .reason-visual { order: 2; }
+.reason-card.reverse .reason-content { order: 1; }
+.reason-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 22px;
+  background: var(--primary);
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.reason-badge-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.reason-badge-digit {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+.reason-title {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.005em;
+  line-height: 1.45;
+}
+.reason-desc {
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.85;
+}
+.reason-desc + .reason-desc { margin-top: 12px; }
+.reason-desc .highlight {
+  background: linear-gradient(transparent 65%, rgba(225,25,41,0.18) 65%);
+  font-weight: 700;
+  color: var(--text);
+}
+.reason-visual {
+  aspect-ratio: 4/3;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--primary-soft);
+  position: relative;
+}
+.reason-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reason-visual-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+.reason-note {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+  line-height: 1.7;
+}
+@media (max-width: 880px) {
+  .reason-card, .reason-card.reverse { grid-template-columns: 1fr; gap: 28px; padding: 32px 28px; }
+  .reason-card.reverse .reason-visual { order: 0; }
+  .reason-card.reverse .reason-content { order: 0; }
+}
+@media (max-width: 540px) {
+  .reason-card { padding: 28px 20px; }
+  .reason-badge { padding: 8px 18px; gap: 8px; margin-bottom: 18px; }
+  .reason-badge-label { font-size: 11px; }
+  .reason-badge-digit { font-size: 18px; }
+}
+
+/* ============================================
+   SUPPORT (LIFE IN JAPAN) SECTION
+   ============================================ */
+.support {
+  background: linear-gradient(180deg, #FFF8F5 0%, #FAF0EC 100%);
+  position: relative;
+  overflow: hidden;
+}
+.support-lead {
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-mid);
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.85;
+}
+.support-visual {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.support-visual img {
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+  margin: 0 auto;
+}
+@media (max-width: 540px) {
+  .support-visual { max-width: 100%; padding: 0 8px; }
+}
+
+/* ============================================
+   FLOW SECTION
+   ============================================ */
+.flow-list {
+  display: grid;
+  gap: 24px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.flow-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 28px 32px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 0;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.flow-item:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+.flow-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 71px;
+  bottom: -24px;
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--primary) 50%, transparent 50%);
+  background-size: 2px 8px;
+}
+.flow-number {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flow-number-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.flow-number-digit { font-size: 28px; font-weight: 900; line-height: 1; }
+.flow-content { padding-top: 8px; }
+.flow-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.flow-desc {
+  color: var(--text-mid);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.flow-desc + .flow-desc { margin-top: 6px; }
+.flow-note {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+  line-height: 1.7;
+}
+@media (max-width: 640px) {
+  .flow-item { grid-template-columns: 60px 1fr; gap: 18px; padding: 22px 20px; }
+  .flow-number { width: 60px; height: 60px; }
+  .flow-number-digit { font-size: 24px; }
+  .flow-number-label { font-size: 9px; }
+  .flow-item:not(:last-child)::after { left: 50px; }
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, #C8121F 100%);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 50%);
+}
+.cta-banner-inner {
+  position: relative;
+  z-index: 1;
+}
+.cta-banner-title {
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+.cta-banner-lead {
+  font-size: 15px;
+  opacity: 0.95;
+  margin-bottom: 36px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.85;
+}
+.cta-banner-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 40px;
+  background: #fff;
+  color: var(--whatsapp-dark);
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-banner-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+}
+.cta-banner-button svg { width: 26px; height: 26px; color: var(--whatsapp); }
+.cta-banner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cta-banner-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+.cta-banner-bubble::before,
+.cta-banner-bubble::after {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 900;
+  color: #fff;
+}
+.cta-banner-bubble::before { content: '＼'; }
+.cta-banner-bubble::after { content: '／'; }
+.sp-only { display: none; }
+@media (max-width: 540px) {
+  .sp-only { display: inline; }
+  .cta-banner-bubble { font-size: 14px; }
+  .cta-banner-bubble::before, .cta-banner-bubble::after { font-size: 20px; }
+}
+.cta-banner-note {
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.faq-item {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item[open] { border-color: var(--primary); }
+.faq-question {
+  padding: 22px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-q-marker {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+}
+.faq-q-text { flex: 1; line-height: 1.6; }
+.faq-q-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+  transition: transform 0.3s;
+}
+.faq-item[open] .faq-q-icon { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 28px 24px 76px;
+  color: var(--text-mid);
+  font-size: 14px;
+  line-height: 1.85;
+}
+@media (max-width: 540px) {
+  .faq-question { padding: 18px 20px; font-size: 14px; gap: 12px; }
+  .faq-q-marker { width: 28px; height: 28px; font-size: 16px; }
+  .faq-answer { padding: 0 20px 20px 60px; font-size: 13px; }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background: #1a1a1a;
+  color: #d8d8d8;
+  padding: 64px 0 32px;
+  font-size: 13px;
+  margin-bottom: 80px;
+  line-height: 1.85;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-brand {
+  margin-bottom: 24px;
+}
+.footer-brand img {
+  height: 36px;
+  width: auto;
+  filter: brightness(1.1);
+}
+.footer-company-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-address {
+  margin-bottom: 20px;
+  color: #a0a0a0;
+}
+.footer-licenses {
+  margin-bottom: 20px;
+  color: #a0a0a0;
+  font-size: 12px;
+}
+.footer-business {
+  margin-bottom: 32px;
+  color: #a0a0a0;
+  font-size: 12px;
+}
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid #2e2e2e;
+  font-size: 12px;
+  color: #888;
+}
+@media (max-width: 540px) {
+  .site-footer { padding: 48px 0 24px; margin-bottom: 90px; }
+}
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <img src="./images/mooovin-logo.png" alt="Mooovin">
+    </a>
+    <a href="#whatsapp" class="header-cta" data-whatsapp>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>WhatsAppで相談</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-bg-img left" role="img" aria-label="日本の家でくつろぐ女性"></div>
+    <div class="hero-bg-img right" role="img" aria-label="日本の家でくつろぐカップル"></div>
+  </div>
+  <div class="hero-bg-overlay"></div>
+
+  <div class="hero-container">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        日本の<span class="accent">賃貸物件探し</span>を<br>
+        WhatsAppでカンタンに
+      </h1>
+      <p class="hero-lead">
+        外国人向け日本不動産のエキスパート。<br>
+        物件探しから契約まですべてサポートします。
+      </p>
+
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span class="hero-feature-text">取扱物件数</span>
+          <span class="hero-feature-num">9万件<small>以上</small></span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-text">英語・中国語・韓国語など</span>
+          <span class="hero-feature-num">7ヶ国語</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-text">WhatsAppでのご相談</span>
+          <span class="hero-feature-num">無料</span>
+        </div>
+      </div>
+
+      <div class="hero-cta-wrap">
+        <span class="hero-cta-bubble">無料で相談可能</span>
+        <a href="#whatsapp" class="hero-cta" data-whatsapp>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsAppで今すぐ相談する
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROBLEMS
+     ============================================ -->
+<section class="problems">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Common Concerns</span>
+      <h2 class="section-title">日本のお部屋探しは<span class="accent">大変…</span>。</h2>
+      <p class="section-lead">こんなお悩みありませんか？</p>
+    </div>
+
+    <div class="problems-hero-image reveal">
+      <img src="./images/problems-hero.jpg" alt="日本での部屋探しに悩む様子">
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card reveal">
+        <p class="problem-text">自分の条件に合う物件が見つかるか不安…</p>
+      </div>
+
+      <div class="problem-card reveal">
+        <p class="problem-text">そもそも日本の部屋探しって何から始めたらいいの？</p>
+      </div>
+
+      <div class="problem-card reveal">
+        <p class="problem-text">言葉の壁や商習慣の違いも気になる…</p>
+      </div>
+
+      <div class="problem-card reveal">
+        <p class="problem-text">保証人がいないと部屋は借りられない？</p>
+      </div>
+
+      <div class="problem-card reveal">
+        <p class="problem-text">海外でお部屋探しから契約までを完結したい！</p>
+      </div>
+
+      <div class="problem-card reveal">
+        <p class="problem-text">外国人としての悩みをわかってくれる人に頼みたい</p>
+      </div>
+    </div>
+
+    <div class="problems-arrow reveal">
+      <div class="problems-arrow-icon">
+        <svg viewBox="0 0 56 76" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 0 H38 V48 H54 L28 76 L2 48 H18 Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <p class="problems-conclusion">Mooovinなら<span class="accent">すべて対応可能</span>です！</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     REASONS
+     ============================================ -->
+<section class="reasons" id="reasons">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Why Choose Us</span>
+      <h2 class="section-title">Mooovinが<span class="accent">選ばれる5つの理由</span></h2>
+    </div>
+
+    <div class="reasons-list">
+
+      <!-- Reason 1 -->
+      <div class="reason-card reveal">
+        <div class="reason-visual">
+          <img src="./images/reason-01.png" alt="日本全国の主要都市">
+        </div>
+        <div class="reason-content">
+          <div class="reason-badge">
+            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-digit">01</span>
+          </div>
+          <h3 class="reason-title">外国人向け物件取り扱い数<br>90,000件以上の実績</h3>
+          <p class="reason-desc">Mooovinは<span class="highlight">日本の物件取り扱い件数90,000件以上</span>。すべて外国人の方OK！</p>
+          <p class="reason-desc">東京・神奈川・愛知・大阪・京都・福岡など、日本全国の物件を取り扱っています。</p>
+        </div>
+      </div>
+
+      <!-- Reason 2 -->
+      <div class="reason-card reverse reveal">
+        <div class="reason-content">
+          <div class="reason-badge">
+            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-digit">02</span>
+          </div>
+          <h3 class="reason-title">専門家が最適な物件をご提案</h3>
+          <p class="reason-desc">WhatsAppでやり取りするだけで、<span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>します。</p>
+          <p class="reason-desc">もちろん無料でお問い合わせ可能で、条件が全て決まっていなくても大丈夫です。日本のお部屋探しに関する質問も、お気軽にご相談ください。</p>
+        </div>
+        <div class="reason-visual">
+          <img src="./images/reason-02.png" alt="Mooovinの専門スタッフチーム">
+        </div>
+      </div>
+
+      <!-- Reason 3 -->
+      <div class="reason-card reveal">
+        <div class="reason-visual">
+          <img src="./images/reason-03.png" alt="多言語対応のカスタマーサポート">
+        </div>
+        <div class="reason-content">
+          <div class="reason-badge">
+            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-digit">03</span>
+          </div>
+          <h3 class="reason-title">外国語対応で<br>スムーズなコミュニケーション</h3>
+          <p class="reason-desc">海外経験者のプロフェッショナルが対応します。<span class="highlight">英語・中国語など7ヶ国語に対応</span>しているため、日本語がわからなくても安心です。</p>
+          <p class="reason-desc">難しい日本の商習慣（礼金など）も丁寧に解説しますので、何でもお気軽にご相談ください。</p>
+        </div>
+      </div>
+
+      <!-- Reason 4 -->
+      <div class="reason-card reverse reveal">
+        <div class="reason-content">
+          <div class="reason-badge">
+            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-digit">04</span>
+          </div>
+          <h3 class="reason-title">保証人不要</h3>
+          <p class="reason-desc">全てのお客様に<span class="highlight">外国人向け保証会社のサービスをご提供</span>しています。</p>
+          <p class="reason-desc">審査を通過した場合は、ご契約に保証人は不要です。日本でのお部屋探しで生じやすい不安を、ひとつ取り除きます。</p>
+        </div>
+        <div class="reason-visual">
+          <img src="./images/reason-04.png" alt="オンラインでの契約手続き">
+        </div>
+      </div>
+
+      <!-- Reason 5 -->
+      <div class="reason-card reveal">
+        <div class="reason-visual">
+          <img src="./images/reason-05.png" alt="クレジットカード決済対応">
+        </div>
+        <div class="reason-content">
+          <div class="reason-badge">
+            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-digit">05</span>
+          </div>
+          <h3 class="reason-title">来店不要・オンライン完結</h3>
+          <p class="reason-desc"><span class="highlight">全てがオンラインで完結可能</span>。気に入った物件があれば、そのままお申込みまでオンラインで進められます。</p>
+          <p class="reason-desc">また、Mooovinでは豊富な決済手段をご用意しており、クレジットカード決済にも対応しています。</p>
+          <p class="reason-note">※ 国際ブランドマークがついたプリペイドカード、デビットカードは使用できません。<br>※ 物件により異なる場合がございます。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SUPPORT (LIFE IN JAPAN)
+     ============================================ -->
+<section class="support">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Life Support</span>
+      <h2 class="section-title">お部屋探しだけじゃない！<br><span class="accent">日本の生活</span>を徹底サポート</h2>
+    </div>
+    <p class="support-lead reveal">物件のご提案に合わせて、日本で快適に過ごせるよう様々なサポートを実施しています。入居後も何かあればいつでもご連絡ください。</p>
+
+    <div class="support-visual reveal">
+      <img src="./images/support-services.png" alt="Mooovinが提供する各種サポート：ライフライン開通、引越し、家具家電、SIM、ビザ、生活相談">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA BANNER (MID)
+     ============================================ -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner reveal">
+      <h2 class="cta-banner-title">日本の新しい暮らしを、今すぐ始めませんか？</h2>
+      <p class="cta-banner-lead">WhatsAppでメッセージを送るだけで、ご希望に合わせた物件をご提案します。</p>
+      <a href="#whatsapp" class="cta-banner-button" data-whatsapp>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsAppで相談を始める
+      </a>
+      <p class="cta-banner-note">英語・中国語・韓国語・その他多言語対応可能</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FLOW
+     ============================================ -->
+<section class="flow-section" id="flow">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">ご利用の流れ</h2>
+    </div>
+
+    <div class="flow-list">
+      <div class="flow-item reveal">
+        <div class="flow-number">
+          <span class="flow-number-label">Step</span>
+          <span class="flow-number-digit">01</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-title">WhatsAppにアクセス</h3>
+          <p class="flow-desc">下のボタンをタップして、MooovinのWhatsAppアカウントにアクセスしてください。</p>
+        </div>
+      </div>
+
+      <div class="flow-item reveal">
+        <div class="flow-number">
+          <span class="flow-number-label">Step</span>
+          <span class="flow-number-digit">02</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-title">WhatsAppでやり取り</h3>
+          <p class="flow-desc">日本の賃貸物件のプロが丁寧に対応し、ご希望条件に合わせて最適な物件を複数ご提案します。</p>
+          <p class="flow-desc">気になる物件があったら内見も可能です。</p>
+        </div>
+      </div>
+
+      <div class="flow-item reveal">
+        <div class="flow-number">
+          <span class="flow-number-label">Step</span>
+          <span class="flow-number-digit">03</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-title">申込・審査・契約</h3>
+          <p class="flow-desc">難しい契約手続きも、Mooovinが徹底サポートします。日本語のみの書類対応もお任せください。</p>
+        </div>
+      </div>
+
+      <div class="flow-item reveal">
+        <div class="flow-number">
+          <span class="flow-number-label">Step</span>
+          <span class="flow-number-digit">04</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-title">お支払い</h3>
+          <p class="flow-desc">契約手続きが完了すると、賃料等のお支払いに進みます。クレジットカード決済も可能です。</p>
+          <span class="flow-note">※ 国際ブランドマークがついたプリペイドカード、デビットカードは使用できません。<br>※ 物件により異なる場合がございます。</span>
+        </div>
+      </div>
+
+      <div class="flow-item reveal">
+        <div class="flow-number">
+          <span class="flow-number-label">Step</span>
+          <span class="flow-number-digit">05</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-title">ご入居</h3>
+          <p class="flow-desc">日本での新しい生活がスタート！入居後も生活に関するご相談を承りますので、いつでもお気軽にご連絡ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section class="faq" id="faq" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-marker">Q</span>
+          <span class="faq-q-text">日本語が話せないのですが大丈夫でしょうか？</span>
+          <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">
+          問題ありません。Mooovinは英語・中国語・韓国語など7ヶ国語に対応しています。お問い合わせから契約まで、すべて母国語でやり取りいただけます。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-marker">Q</span>
+          <span class="faq-q-text">保証人がいないのですが、大丈夫でしょうか？</span>
+          <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">
+          大丈夫です。Mooovinでは全てのお客様に外国人向け保証会社のサービスをご提供しています。審査を通過すれば、ご契約に保証人は不要です。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-marker">Q</span>
+          <span class="faq-q-text">海外からもお部屋探しは可能ですか？</span>
+          <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">
+          可能です。物件探しから申込・契約まで、すべてオンラインで完結します。日本に到着する前にお部屋を確保し、入国当日からスムーズに新生活を始められます。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-marker">Q</span>
+          <span class="faq-q-text">学生またはワーキングホリデーのビザでも借りることができますか？</span>
+          <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">
+          多くの場合可能です。Mooovinでは学生ビザ・ワーキングホリデービザの方も入居可能な物件を取り扱っています。詳しい条件は物件により異なりますので、お気軽にWhatsAppでご相談ください。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-marker">Q</span>
+          <span class="faq-q-text">友人と一緒に住みたいのですが可能ですか？</span>
+          <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">
+          可能です。ルームシェア対応物件のご紹介もしておりますので、WhatsAppでご状況をお伝えいただければ、条件に合う物件をご案内いたします。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-marker">Q</span>
+          <span class="faq-q-text">ご利用にあたって料金は発生しますか？</span>
+          <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">
+          相談・物件探しは完全無料です。実際にご契約いただいた際に、通常の賃貸契約と同様の費用（仲介手数料・敷金・初月家賃など）が発生します。
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FINAL CTA
+     ============================================ -->
+<section class="cta-banner" id="whatsapp">
+  <div class="container">
+    <div class="cta-banner-inner reveal">
+      <h2 class="cta-banner-title">日本のお部屋を<br class="sp-only">WhatsAppで簡単に</h2>
+      <p class="cta-banner-lead">以下ボタンからお気軽にご連絡ください。<br>ご希望に合わせた物件を提案します。</p>
+      <div class="cta-banner-wrap">
+        <span class="cta-banner-bubble">無料で相談可能</span>
+        <a href="https://wa.me/8100000000" class="cta-banner-button" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsAppを開く
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/mooovin-logo.png" alt="Mooovin">
+    </div>
+    <p class="footer-company-name">KACHIAL Inc.</p>
+    <p class="footer-address">
+      Shinjuku Center Building 38F<br>
+      1-25-1 Nishi-Shinjuku, Shinjuku-ku<br>
+      Tokyo 142-0061, Japan
+    </p>
+    <p class="footer-licenses">
+      Real Estate Brokerage License: Minister of Land, Infrastructure, Transport and Tourism (11) No. 3182<br>
+      Rental Housing Management Business License: Minister of Land, Infrastructure, Transport and Tourism (02) No. 002904
+    </p>
+    <p class="footer-business">
+      Real Estate Leasing and Sales Business<br>
+      Real Estate Utilization and Consulting Business, etc.
+    </p>
+    <p class="footer-bottom">© KACHIAL. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ============================================
+     FLOATING WHATSAPP CTA
+     ============================================ -->
+<a href="https://wa.me/8100000000" class="floating-cta" target="_blank" rel="noopener" aria-label="WhatsAppで相談する">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span>WhatsAppで相談</span>
+</a>
+
+<script>
+(function(){
+  // ============================================
+  // WhatsApp link redirection
+  // Replace WHATSAPP_URL with your actual WhatsApp business URL
+  // ============================================
+  var WHATSAPP_URL = 'https://wa.me/8100000000'; // TODO: 実際のMooovin WhatsApp番号に差し替え
+
+  document.querySelectorAll('[data-whatsapp]').forEach(function(el){
+    el.setAttribute('href', WHATSAPP_URL);
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+  });
+
+  // ============================================
+  // Scroll reveal (Intersection Observer)
+  // ============================================
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function(el){
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){
+      el.classList.add('is-visible');
+    });
+  }
+
+  // ============================================
+  // Smooth scroll for anchor links
+  // ============================================
+  document.querySelectorAll('a[href^="#"]:not([data-whatsapp])').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var id = this.getAttribute('href').slice(1);
+      if (!id) return;
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      var headerH = document.querySelector('.site-header').offsetHeight || 0;
+      var y = target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
