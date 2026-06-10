@@ -84,6 +84,9 @@ section { padding: 80px 0; }
   border-bottom: 1px solid var(--border);
   z-index: 100;
 }
+@media (max-width: 768px) {
+  .site-header { display: none; }
+}
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -139,8 +142,16 @@ section { padding: 80px 0; }
   font-weight: 700;
   font-size: 15px;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(120%);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
   animation: floatPulse 3s ease-in-out infinite;
+}
+.floating-cta.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 .floating-cta:hover {
   transform: translateY(-2px);
@@ -150,6 +161,9 @@ section { padding: 80px 0; }
 @keyframes floatPulse {
   0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
   50% { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.65); }
+}
+@media (min-width: 769px) {
+  .floating-cta { display: none; }
 }
 @media (max-width: 540px) {
   .floating-cta {
@@ -168,10 +182,10 @@ section { padding: 80px 0; }
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 640px;
+  min-height: 580px;
   display: flex;
   align-items: center;
-  padding: 80px 0 100px;
+  padding: 56px 0 70px;
 }
 .hero-bg {
   position: absolute;
@@ -186,11 +200,11 @@ section { padding: 80px 0; }
 }
 .hero-bg-img.left {
   background-image: url('./images/hero-single.jpg');
-  background-position: center 30%;
+  background-position: center 18%;
 }
 .hero-bg-img.right {
   background-image: url('./images/hero-couple.jpg');
-  background-position: center 35%;
+  background-position: center 22%;
 }
 .hero-bg-overlay {
   position: absolute;
@@ -265,11 +279,12 @@ section { padding: 80px 0; }
   background: rgba(255,255,255,0.96);
   border: 1.5px solid rgba(225,25,41,0.18);
   border-radius: 0;
-  padding: 18px 14px;
+  padding: 16px 12px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  justify-content: space-between;
+  gap: 8px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -337,8 +352,10 @@ section { padding: 80px 0; }
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: 700px; padding: 60px 0 80px; }
+  .hero { min-height: 540px; padding: 40px 0 56px; }
   .hero-bg { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .hero-bg-img.left { background-position: center 22%; }
+  .hero-bg-img.right { background-position: center 28%; }
   .hero-bg-overlay {
     background:
       linear-gradient(180deg,
@@ -349,11 +366,11 @@ section { padding: 80px 0; }
   }
 }
 @media (max-width: 540px) {
-  .hero-features { grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 360px; }
-  .hero-feature { padding: 14px 8px; border-radius: 0; }
-  .hero-feature-num { font-size: 18px; }
+  .hero-features { grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: 380px; }
+  .hero-feature { padding: 12px 6px; border-radius: 0; min-height: 92px; }
+  .hero-feature-num { font-size: 17px; }
   .hero-feature-num small { font-size: 11px; }
-  .hero-feature-text { font-size: 11px; }
+  .hero-feature-text { font-size: 10.5px; line-height: 1.4; }
   .hero-cta { width: 100%; justify-content: center; padding: 18px 24px; font-size: 16px; }
   .hero-cta-bubble { font-size: 14px; }
   .hero-cta-bubble::before, .hero-cta-bubble::after { font-size: 20px; }
@@ -472,8 +489,54 @@ section { padding: 80px 0; }
 }
 .problems-conclusion .accent { color: var(--primary); }
 @media (max-width: 640px) {
-  .problems-grid { grid-template-columns: 1fr; }
-  .problem-card { padding: 24px 24px; }
+  .problems-grid {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .problem-card {
+    max-width: 78%;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 6px 18px -4px rgba(225, 25, 41, 0.14), 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+  .problem-card::before { display: none; }
+  /* 奇数：左寄せ＋左に吹き出し口 */
+  .problem-card:nth-child(odd) {
+    margin-left: 14px;
+    margin-right: auto;
+  }
+  .problem-card:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-right: 12px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  /* 偶数：右寄せ＋右に吹き出し口 */
+  .problem-card:nth-child(even) {
+    margin-right: 14px;
+    margin-left: auto;
+  }
+  .problem-card:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
   .problems-arrow-icon { width: 44px; height: 60px; }
 }
 
@@ -541,7 +604,7 @@ section { padding: 80px 0; }
   color: var(--text);
 }
 .reason-visual {
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   border-radius: 0;
   overflow: hidden;
   background: var(--primary-soft);
@@ -573,9 +636,12 @@ section { padding: 80px 0; }
   line-height: 1.7;
 }
 @media (max-width: 880px) {
-  .reason-card, .reason-card.reverse { grid-template-columns: 1fr; gap: 28px; padding: 32px 28px; }
-  .reason-card.reverse .reason-visual { order: 0; }
-  .reason-card.reverse .reason-content { order: 0; }
+  .reason-card, .reason-card.reverse { grid-template-columns: 1fr; gap: 24px; padding: 32px 28px; }
+  /* SPでは全カード「コンテンツ→画像」の順に統一 */
+  .reason-card .reason-content,
+  .reason-card.reverse .reason-content { order: 1; }
+  .reason-card .reason-visual,
+  .reason-card.reverse .reason-visual { order: 2; }
 }
 @media (max-width: 540px) {
   .reason-card { padding: 28px 20px; }
@@ -964,21 +1030,21 @@ section { padding: 80px 0; }
       </h1>
       <p class="hero-lead">
         外国人向け日本不動産のエキスパート。<br>
-        物件探しから契約まですべてサポートします。
+        物件探しから契約までサポートします。
       </p>
 
       <div class="hero-features">
         <div class="hero-feature">
-          <span class="hero-feature-text">取扱物件数</span>
+          <span class="hero-feature-text">日本の<br>取扱物件数</span>
           <span class="hero-feature-num">9万件<small>以上</small></span>
         </div>
         <div class="hero-feature">
-          <span class="hero-feature-text">英語・中国語・韓国語など</span>
+          <span class="hero-feature-text">英語・中国語<br>韓国語など</span>
           <span class="hero-feature-num">7ヶ国語</span>
         </div>
         <div class="hero-feature">
-          <span class="hero-feature-text">WhatsAppでのご相談</span>
-          <span class="hero-feature-num">無料</span>
+          <span class="hero-feature-text">WhatsAppでの<br>部屋探し相談</span>
+          <span class="hero-feature-num">完全無料</span>
         </div>
       </div>
 
@@ -1020,7 +1086,7 @@ section { padding: 80px 0; }
       </div>
 
       <div class="problem-card reveal">
-        <p class="problem-text">言葉の壁や商習慣の違いも気になる…</p>
+        <p class="problem-text">言葉の壁や商習慣の違いも気になる…。</p>
       </div>
 
       <div class="problem-card reveal">
@@ -1030,10 +1096,6 @@ section { padding: 80px 0; }
       <div class="problem-card reveal">
         <p class="problem-text">海外でお部屋探しから契約までを完結したい！</p>
       </div>
-
-      <div class="problem-card reveal">
-        <p class="problem-text">外国人としての悩みをわかってくれる人に頼みたい</p>
-      </div>
     </div>
 
     <div class="problems-arrow reveal">
@@ -1042,7 +1104,7 @@ section { padding: 80px 0; }
           <path d="M18 0 H38 V48 H54 L28 76 L2 48 H18 Z" fill="currentColor"/>
         </svg>
       </div>
-      <p class="problems-conclusion">Mooovinなら<span class="accent">すべて対応可能</span>です！</p>
+      <p class="problems-conclusion">Mooovinなら<span class="accent">すべて解決</span>できます！</p>
     </div>
   </div>
 </section>
@@ -1054,7 +1116,7 @@ section { padding: 80px 0; }
   <div class="container">
     <div class="section-header reveal">
       <span class="section-eyebrow">Why Choose Us</span>
-      <h2 class="section-title">Mooovinが<span class="accent">選ばれる5つの理由</span></h2>
+      <h2 class="section-title"><span class="accent">選ばれる5つの理由</span></h2>
     </div>
 
     <div class="reasons-list">
@@ -1167,7 +1229,7 @@ section { padding: 80px 0; }
 <section class="cta-banner">
   <div class="container">
     <div class="cta-banner-inner reveal">
-      <h2 class="cta-banner-title">日本の新しい暮らしを、今すぐ始めませんか？</h2>
+      <h2 class="cta-banner-title">日本の新しい暮らしを<br class="sp-only">今すぐ始めませんか？</h2>
       <p class="cta-banner-lead">WhatsAppでメッセージを送るだけで、ご希望に合わせた物件をご提案します。</p>
       <a href="#whatsapp" class="cta-banner-button" data-whatsapp>
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -1381,11 +1443,11 @@ section { padding: 80px 0; }
 <!-- ============================================
      FLOATING WHATSAPP CTA
      ============================================ -->
-<a href="https://wa.me/8100000000" class="floating-cta" target="_blank" rel="noopener" aria-label="WhatsAppで相談する">
+<a href="https://wa.me/8100000000" class="floating-cta" target="_blank" rel="noopener" aria-label="WhatsAppで今すぐ相談する">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
-  <span>WhatsAppで相談</span>
+  <span>WhatsAppで今すぐ相談する</span>
 </a>
 
 <script>
@@ -1423,6 +1485,31 @@ section { padding: 80px 0; }
       el.classList.add('is-visible');
     });
   }
+
+  // ============================================
+  // Floating CTA: スクロールで表示（SPのみ）
+  // ============================================
+  var floatingCta = document.querySelector('.floating-cta');
+  var heroHeight = 0;
+  function updateHero() {
+    var hero = document.querySelector('.hero');
+    heroHeight = hero ? hero.offsetHeight : 0;
+  }
+  updateHero();
+  window.addEventListener('resize', updateHero);
+
+  function toggleFloatingCta() {
+    if (!floatingCta) return;
+    // ヒーロー高さの70%スクロールしたら表示
+    var trigger = heroHeight * 0.7;
+    if (window.scrollY > trigger) {
+      floatingCta.classList.add('is-visible');
+    } else {
+      floatingCta.classList.remove('is-visible');
+    }
+  }
+  window.addEventListener('scroll', toggleFloatingCta, { passive: true });
+  toggleFloatingCta();
 
   // ============================================
   // Smooth scroll for anchor links
