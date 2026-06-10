@@ -283,8 +283,8 @@ section { padding: 80px 0; }
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: center;
+  gap: 3px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -352,22 +352,22 @@ section { padding: 80px 0; }
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: 540px; padding: 40px 0 56px; }
+  .hero { min-height: 560px; padding: 80px 0 30px; }
   .hero-bg { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
   .hero-bg-img.left { background-position: center 22%; }
   .hero-bg-img.right { background-position: center 28%; }
   .hero-bg-overlay {
     background:
       linear-gradient(180deg,
-        rgba(255,255,255,0.5) 0%,
-        rgba(255,255,255,0.7) 40%,
-        rgba(255,255,255,0.85) 70%,
+        rgba(255,255,255,0.6) 0%,
+        rgba(255,255,255,0.75) 40%,
+        rgba(255,255,255,0.88) 70%,
         rgba(255,245,245,0.95) 100%);
   }
 }
 @media (max-width: 540px) {
   .hero-features { grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: 380px; }
-  .hero-feature { padding: 12px 6px; border-radius: 0; min-height: 92px; }
+  .hero-feature { padding: 12px 6px; border-radius: 0; min-height: 84px; }
   .hero-feature-num { font-size: 17px; }
   .hero-feature-num small { font-size: 11px; }
   .hero-feature-text { font-size: 10.5px; line-height: 1.4; }
@@ -476,7 +476,7 @@ section { padding: 80px 0; }
   display: block;
   margin: 0 auto 20px;
   width: 56px;
-  height: 76px;
+  height: 64px;
   color: var(--primary);
   filter: drop-shadow(0 6px 12px rgba(225,25,41,0.25));
 }
@@ -537,7 +537,7 @@ section { padding: 80px 0; }
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
   }
-  .problems-arrow-icon { width: 44px; height: 60px; }
+  .problems-arrow-icon { width: 44px; height: 50px; }
 }
 
 /* ============================================
@@ -604,7 +604,7 @@ section { padding: 80px 0; }
   color: var(--text);
 }
 .reason-visual {
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/10;
   border-radius: 0;
   overflow: hidden;
   background: var(--primary-soft);
@@ -1066,7 +1066,7 @@ section { padding: 80px 0; }
      ============================================ -->
 <section class="problems">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header">
       <span class="section-eyebrow">Common Concerns</span>
       <h2 class="section-title">日本のお部屋探しは<span class="accent">大変…</span>。</h2>
       <p class="section-lead">こんなお悩みありませんか？</p>
@@ -1100,8 +1100,8 @@ section { padding: 80px 0; }
 
     <div class="problems-arrow reveal">
       <div class="problems-arrow-icon">
-        <svg viewBox="0 0 56 76" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M18 0 H38 V48 H54 L28 76 L2 48 H18 Z" fill="currentColor"/>
+        <svg viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 0 H38 V36 H54 L28 64 L2 36 H18 Z" fill="currentColor"/>
         </svg>
       </div>
       <p class="problems-conclusion">Mooovinなら<span class="accent">すべて解決</span>できます！</p>
