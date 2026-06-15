@@ -6,11 +6,11 @@
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <title>WhatsAppで日本の賃貸物件をカンタンに｜Mooovin</title>
-<meta name="description" content="Mooovinなら、日本の賃貸物件探しがWhatsAppで完結。外国人の方OKの物件90,000件以上、英語・中国語など多言語対応、保証人不要、オンライン完結。">
+<meta name="description" content="Mooovinなら、日本の賃貸物件探しがWhatsAppで完結。外国人の方OKの物件90,000件以上、多言語対応、保証人不要、オンライン完結。">
 
 <!-- OGP -->
 <meta property="og:title" content="WhatsAppで日本の賃貸物件をカンタンに｜Mooovin" />
-<meta property="og:description" content="Mooovinなら、日本の賃貸物件探しがWhatsAppで完結。外国人の方OKの物件90,000件以上、英語・中国語など多言語対応、保証人不要、オンライン完結。" />
+<meta property="og:description" content="Mooovinなら、日本の賃貸物件探しがWhatsAppで完結。外国人の方OKの物件90,000件以上、多言語対応、保証人不要、オンライン完結。" />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,10 +44,10 @@ ul { margin: 0; padding: 0; list-style: none; }
    VARIABLES
    ============================================ */
 :root {
-  --primary: #E11929;
-  --primary-dark: #B91524;
-  --primary-light: #FEEFF0;
-  --primary-soft: #FDF5F5;
+  --primary: #eb5335;
+  --primary-dark: #c34f30;
+  --primary-light: #fef5f3;
+  --primary-soft: #fdf8f6;
   --whatsapp: #25D366;
   --whatsapp-dark: #1EBE5A;
   --text: #1a1a1a;
@@ -58,7 +58,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   --border: #E8E5E0;
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
   --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
-  --shadow-lg: 0 16px 48px rgba(225,25,41,0.18);
+  --shadow-lg: 0 16px 48px rgba(235,83,53,0.18);
 }
 
 /* ============================================
@@ -256,7 +256,7 @@ section { padding: 80px 0; }
   right: 0;
   bottom: 4px;
   height: 10px;
-  background: rgba(225,25,41,0.18);
+  background: rgba(235,83,53,0.18);
   z-index: -1;
 }
 .hero-lead {
@@ -277,7 +277,7 @@ section { padding: 80px 0; }
 }
 .hero-feature {
   background: rgba(255,255,255,0.96);
-  border: 1.5px solid rgba(225,25,41,0.18);
+  border: 1.5px solid rgba(235,83,53,0.18);
   border-radius: 0;
   padding: 16px 12px;
   text-align: center;
@@ -353,18 +353,32 @@ section { padding: 80px 0; }
 
 @media (max-width: 768px) {
   .hero { min-height: 560px; padding: 80px 0 30px; }
-  .hero-bg { grid-template-columns: 1fr; grid-template-rows: 3fr 2fr; }
-  .hero-bg-img.left { background-position: center 22%; }
-  .hero-bg-img.right { background-position: center 28%; }
+  .hero-bg {
+    display: block;
+    grid-template-columns: none;
+    grid-template-rows: none;
+  }
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-bg-img.left {
+    background-position: 30% 25%;
+    -webkit-mask-image: linear-gradient(135deg, #000 35%, transparent 65%);
+    mask-image: linear-gradient(135deg, #000 35%, transparent 65%);
+  }
+  .hero-bg-img.right {
+    background-position: 70% 70%;
+    -webkit-mask-image: linear-gradient(135deg, transparent 35%, #000 65%);
+    mask-image: linear-gradient(135deg, transparent 35%, #000 65%);
+  }
   .hero-bg-overlay {
     background:
       linear-gradient(180deg,
         rgba(255,255,255,0.6) 0%,
-        rgba(255,255,255,0.55) 28%,
-        rgba(255,255,255,0.82) 52%,
-        rgba(255,255,255,0.88) 65%,
-        rgba(255,255,255,0.9) 78%,
-        rgba(255,245,245,0.95) 100%);
+        rgba(255,255,255,0.55) 35%,
+        rgba(255,255,255,0.75) 70%,
+        rgba(255,245,245,0.92) 100%);
   }
   .hero-lead { margin-bottom: 20px; }
 }
@@ -413,6 +427,15 @@ section { padding: 80px 0; }
 }
 
 /* ============================================
+   HIGHLIGHT (global)
+   ============================================ */
+.highlight {
+  background: linear-gradient(transparent 65%, rgba(235,83,53,0.18) 65%);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ============================================
    PROBLEMS SECTION
    ============================================ */
 .problems {
@@ -449,7 +472,7 @@ section { padding: 80px 0; }
   padding: 28px 28px;
   border: none;
   position: relative;
-  box-shadow: 0 10px 28px -6px rgba(225, 25, 41, 0.14), 0 2px 6px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 28px -6px rgba(235, 83, 53, 0.14), 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 .problem-card::before {
   content: '\201C';
@@ -481,7 +504,7 @@ section { padding: 80px 0; }
   width: 56px;
   height: 64px;
   color: var(--primary);
-  filter: drop-shadow(0 6px 12px rgba(225,25,41,0.25));
+  filter: drop-shadow(0 6px 12px rgba(235,83,53,0.25));
 }
 .problems-arrow-icon svg { width: 100%; height: 100%; display: block; }
 .problems-conclusion {
@@ -491,6 +514,23 @@ section { padding: 80px 0; }
   line-height: 1.5;
 }
 .problems-conclusion .accent { color: var(--primary); }
+.problems-arrow-desc {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.95;
+  max-width: 720px;
+  margin: 24px auto 0;
+}
+.problems-chat-image {
+  max-width: 340px;
+  margin: 40px auto 0;
+}
+.problems-chat-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
 @media (max-width: 640px) {
   .problems-grid {
     display: block;
@@ -503,7 +543,7 @@ section { padding: 80px 0; }
     margin-bottom: 16px;
     position: relative;
     background: #fff;
-    box-shadow: 0 6px 18px -4px rgba(225, 25, 41, 0.14), 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 6px 18px -4px rgba(235, 83, 53, 0.14), 0 2px 4px rgba(0, 0, 0, 0.04);
   }
   .problem-card::before { display: none; }
   /* 奇数：左寄せ＋左に吹き出し口 */
@@ -541,11 +581,36 @@ section { padding: 80px 0; }
     border-bottom: 10px solid transparent;
   }
   .problems-arrow-icon { width: 44px; height: 50px; }
+  .problems-arrow-desc { font-size: 14px; margin-top: 20px; }
+  .problems-chat-image { max-width: 260px; margin-top: 32px; }
 }
 
 /* ============================================
-   REASONS SECTION
+   REASONS SECTION (= About Mooovin)
    ============================================ */
+.reasons-merit-header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 8px;
+}
+.reasons-merit-title {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--text);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+}
+.reasons-merit-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--primary);
+}
 .reasons-list {
   display: grid;
   gap: 32px;
@@ -563,7 +628,7 @@ section { padding: 80px 0; }
   padding: 48px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 16px 44px -10px rgba(225, 25, 41, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 44px -10px rgba(235, 83, 53, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 .reason-card.reverse { grid-template-columns: 1.2fr 1fr; }
 .reason-card.reverse .reason-visual { order: 2; }
@@ -601,11 +666,6 @@ section { padding: 80px 0; }
   line-height: 1.85;
 }
 .reason-desc + .reason-desc { margin-top: 12px; }
-.reason-desc .highlight {
-  background: linear-gradient(transparent 65%, rgba(225,25,41,0.18) 65%);
-  font-weight: 700;
-  color: var(--text);
-}
 .reason-visual {
   aspect-ratio: 16/10;
   border-radius: 0;
@@ -651,6 +711,7 @@ section { padding: 80px 0; }
   .reason-badge { padding: 8px 18px; gap: 8px; margin-bottom: 18px; }
   .reason-badge-label { font-size: 11px; }
   .reason-badge-digit { font-size: 18px; }
+  .reasons-merit-header { margin-bottom: 32px; }
 }
 
 /* ============================================
@@ -772,7 +833,7 @@ section { padding: 80px 0; }
    CTA SECTION
    ============================================ */
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary) 0%, #C8121F 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #d24c2b 100%);
   color: #fff;
   text-align: center;
   position: relative;
@@ -1043,7 +1104,7 @@ section { padding: 80px 0; }
         </div>
         <div class="hero-feature">
           <span class="hero-feature-text">英語・中国語など</span>
-          <span class="hero-feature-num">7ヶ国語<br><small>対応可能</small></span>
+          <span class="hero-feature-num">多言語<br><small>対応可能</small></span>
         </div>
         <div class="hero-feature">
           <span class="hero-feature-text">WhatsAppでの<br>部屋探し相談</span>
@@ -1085,7 +1146,7 @@ section { padding: 80px 0; }
       </div>
 
       <div class="problem-card reveal">
-        <p class="problem-text">そもそも日本の部屋探しって何から始めたらいいの？</p>
+        <p class="problem-text">どうやって日本のお部屋を探せばいいか分からない…。</p>
       </div>
 
       <div class="problem-card reveal">
@@ -1093,11 +1154,7 @@ section { padding: 80px 0; }
       </div>
 
       <div class="problem-card reveal">
-        <p class="problem-text">保証人がいないと部屋は借りられない？</p>
-      </div>
-
-      <div class="problem-card reveal">
-        <p class="problem-text">海外でお部屋探しから契約までを完結したい！</p>
+        <p class="problem-text">海外から気軽にお部屋探しをしたい！</p>
       </div>
     </div>
 
@@ -1107,31 +1164,41 @@ section { padding: 80px 0; }
           <path d="M18 0 H38 V36 H54 L28 64 L2 36 H18 Z" fill="currentColor"/>
         </svg>
       </div>
-      <p class="problems-conclusion">Mooovinなら<span class="accent">すべて解決</span>できます！</p>
+      <p class="problems-conclusion">MooovinならWhatsAppで<span class="accent">希望条件を伝えるだけ</span>！</p>
+      <p class="problems-arrow-desc">WhatsAppでやり取りするだけで、<span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>！「日本に来ても住むところが無い」という不安を無くしていただけます。もちろん、条件が全て決まっていなくても問題ございません！</p>
+    </div>
+
+    <div class="problems-chat-image reveal">
+      <img src="./images/chat-mock.png" alt="WhatsAppでMooovinとやり取りする様子">
     </div>
   </div>
 </section>
 
 <!-- ============================================
-     REASONS
+     ABOUT MOOOVIN (旧:選ばれる5つの理由)
      ============================================ -->
 <section class="reasons" id="reasons">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-eyebrow">Why Choose Us</span>
-      <h2 class="section-title">選ばれる<span class="accent">5つの理由</span></h2>
+      <span class="section-eyebrow">About Mooovin</span>
+      <h2 class="section-title"><span class="accent">Mooovin</span>とは？</h2>
+      <p class="section-lead">外国人入居可能物件のみ取り扱っているお部屋探しサービス！<br>世界中のどこからでも、日本の部屋探しが可能です。</p>
+    </div>
+
+    <div class="reasons-merit-header reveal">
+      <h3 class="reasons-merit-title">ご利用のメリット</h3>
     </div>
 
     <div class="reasons-list">
 
-      <!-- Reason 1 -->
+      <!-- メリット1 -->
       <div class="reason-card reveal">
         <div class="reason-visual">
           <img src="./images/reason-01.png" alt="日本全国の主要都市">
         </div>
         <div class="reason-content">
           <div class="reason-badge">
-            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-label">MERIT</span>
             <span class="reason-badge-digit">01</span>
           </div>
           <h3 class="reason-title">物件取扱数<br>90,000件以上の実績</h3>
@@ -1141,68 +1208,52 @@ section { padding: 80px 0; }
         </div>
       </div>
 
-      <!-- Reason 2 -->
+      <!-- メリット2 -->
       <div class="reason-card reverse reveal">
         <div class="reason-content">
           <div class="reason-badge">
-            <span class="reason-badge-label">REASON</span>
+            <span class="reason-badge-label">MERIT</span>
             <span class="reason-badge-digit">02</span>
           </div>
-          <h3 class="reason-title">希望に合う物件が<br>チャットで見つかる</h3>
-          <p class="reason-desc">WhatsAppでやり取りするだけで、<span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>！<br>「日本に来ても住むところが無い」という不安を無くしていただけます。</p>
-          <p class="reason-desc">もちろん、条件が全て決まっていなくても問題ございません！無料でお問い合わせ可能なので、お気軽にご利用ください。</p>
+          <h3 class="reason-title">多言語対応で<br>スムーズなコミュニケーション</h3>
+          <p class="reason-desc">Mooovinではお客様のお部屋探しや日本での生活を海外経験者のプロフェッショナルがサポートします。<span class="highlight">多言語で対応可能</span>なので、日本語がわからなくてもご安心ください！</p>
+          <p class="reason-desc">難しい日本の商習慣についてなど、日本のことなら何でも質問・相談OKなので、お気軽にご連絡ください！</p>
         </div>
-        <div class="reason-visual">
-          <img src="./images/reason-02.png" alt="Mooovinの専門スタッフチーム">
-        </div>
-      </div>
-
-      <!-- Reason 3 -->
-      <div class="reason-card reveal">
         <div class="reason-visual">
           <img src="./images/reason-03.png" alt="多言語対応のカスタマーサポート">
         </div>
-        <div class="reason-content">
-          <div class="reason-badge">
-            <span class="reason-badge-label">REASON</span>
-            <span class="reason-badge-digit">03</span>
-          </div>
-          <h3 class="reason-title">7ヶ国語対応で<br>スムーズなコミュニケーション</h3>
-          <p class="reason-desc">Mooovinではお客様のお部屋探しや日本での生活を海外経験者のプロフェッショナルがサポートします。<span class="highlight">7ヶ国語で対応可能</span>（日本語、英語、中国語(繁体中文・簡体中文)、マレー語、ドイツ語、フランス語）なので、日本語がわからなくてもご安心ください！</p>
-          <p class="reason-desc">難しい日本の商習慣についてなど、日本のことなら何でも質問・相談OKなので、お気軽にご連絡ください！</p>
-        </div>
       </div>
 
-      <!-- Reason 4 -->
-      <div class="reason-card reverse reveal">
+      <!-- メリット3 -->
+      <div class="reason-card reveal">
+        <div class="reason-visual">
+          <img src="./images/reason-04.png" alt="オンラインでの契約手続き">
+        </div>
         <div class="reason-content">
           <div class="reason-badge">
-            <span class="reason-badge-label">REASON</span>
-            <span class="reason-badge-digit">04</span>
+            <span class="reason-badge-label">MERIT</span>
+            <span class="reason-badge-digit">03</span>
           </div>
           <h3 class="reason-title">保証人無しでも賃貸契約OK！</h3>
           <p class="reason-desc">日本には物件を借りる時に契約者以外に&ldquo;保証人&rdquo;という人が必要な場合があります。</p>
           <p class="reason-desc">その点、Mooovinは、全てのお客様に<span class="highlight">外国人向け保証会社のサービスをご提供</span>しておりますのでご安心ください！審査通過した場合は、ご契約に保証人は不要となります。</p>
         </div>
-        <div class="reason-visual">
-          <img src="./images/reason-04.png" alt="オンラインでの契約手続き">
-        </div>
       </div>
 
-      <!-- Reason 5 -->
-      <div class="reason-card reveal">
-        <div class="reason-visual">
-          <img src="./images/reason-05.png" alt="クレジットカード決済対応">
-        </div>
+      <!-- メリット4 -->
+      <div class="reason-card reverse reveal">
         <div class="reason-content">
           <div class="reason-badge">
-            <span class="reason-badge-label">REASON</span>
-            <span class="reason-badge-digit">05</span>
+            <span class="reason-badge-label">MERIT</span>
+            <span class="reason-badge-digit">04</span>
           </div>
           <h3 class="reason-title">来店不要・オンライン完結</h3>
           <p class="reason-desc">Mooovinでは<span class="highlight">全てがオンラインで完結可能</span>！気に入った物件があれば、問い合わせから申し込みまでオンラインで対応できます！</p>
           <p class="reason-desc">また、豊富な決済手段をご用意しており、クレジットカード決済ももちろん可能です！</p>
           <p class="reason-note">※ 国際ブランドマークがついたプリペイドカード、デビットカードは使用できません。<br>※ 物件により異なる場合がございます。</p>
+        </div>
+        <div class="reason-visual">
+          <img src="./images/reason-05.png" alt="クレジットカード決済対応">
         </div>
       </div>
 
@@ -1241,7 +1292,7 @@ section { padding: 80px 0; }
         </svg>
         WhatsAppで相談を始める
       </a>
-      <p class="cta-banner-note">英語・中国語・韓国語・その他多言語対応可能</p>
+      <p class="cta-banner-note">英語など多言語対応可能</p>
     </div>
   </div>
 </section>
@@ -1337,7 +1388,7 @@ section { padding: 80px 0; }
           <svg class="faq-q-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
         <div class="faq-answer">
-          問題ありません。Mooovinは英語・中国語・韓国語など7ヶ国語に対応しています。お問い合わせから契約まで、すべて母国語でやり取りいただけます。
+          問題ありません。Mooovinは英語をはじめ多言語に対応しています。お問い合わせから契約まで、安心してご利用いただけます。
         </div>
       </details>
 
