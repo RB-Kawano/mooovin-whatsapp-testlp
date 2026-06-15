@@ -393,7 +393,7 @@ section { padding: 80px 0; }
   font-family: 'DM Serif Display', sans-serif;
 }
 .section-title {
-  font-size: clamp(26px, 4vw, 36px);
+  font-size: clamp(30px, 4.6vw, 42px);
   font-weight: 800;
   margin-bottom: 16px;
   letter-spacing: 0.01em;
@@ -494,7 +494,7 @@ section { padding: 80px 0; }
 }
 .problems-arrow-icon svg { width: 100%; height: 100%; display: block; }
 .problems-conclusion {
-  font-size: clamp(22px, 3.6vw, 32px);
+  font-size: clamp(26px, 4.2vw, 38px);
   font-weight: 800;
   color: var(--text);
   line-height: 1.5;
@@ -579,27 +579,30 @@ section { padding: 80px 0; }
    ============================================ */
 .reasons-merit-header {
   text-align: center;
-  margin-bottom: 40px;
-  margin-top: 8px;
+  margin-bottom: 48px;
+  margin-top: 16px;
 }
 .reasons-merit-title {
-  font-size: clamp(15px, 1.8vw, 18px);
-  font-weight: 600;
-  color: var(--text);
-  position: relative;
   display: inline-block;
-  padding-bottom: 10px;
-  letter-spacing: 0.05em;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 32px;
+  font-size: clamp(15px, 1.9vw, 18px);
+  font-weight: 700;
+  position: relative;
+  letter-spacing: 0.06em;
 }
 .reasons-merit-title::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 2px;
-  background: var(--primary);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid var(--primary);
 }
 .reasons-list {
   display: grid;
@@ -627,19 +630,20 @@ section { padding: 80px 0; }
   display: inline-flex;
   align-items: baseline;
   gap: 10px;
-  padding: 10px 22px;
-  background: var(--primary);
-  color: #fff;
+  padding: 0 2px 8px 2px;
+  background: transparent;
+  color: var(--primary);
   margin-bottom: 24px;
   letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--primary);
 }
 .reason-badge-label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.18em;
 }
 .reason-badge-digit {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 900;
   line-height: 1;
 }
@@ -698,9 +702,9 @@ section { padding: 80px 0; }
 }
 @media (max-width: 540px) {
   .reason-card { padding: 28px 20px; }
-  .reason-badge { padding: 8px 18px; gap: 8px; margin-bottom: 18px; }
-  .reason-badge-label { font-size: 11px; }
-  .reason-badge-digit { font-size: 18px; }
+  .reason-badge { padding: 0 2px 6px 2px; gap: 8px; margin-bottom: 18px; border-bottom-width: 1.5px; }
+  .reason-badge-label { font-size: 12px; }
+  .reason-badge-digit { font-size: 22px; }
   .reasons-merit-header { margin-bottom: 32px; }
 }
 
@@ -1155,7 +1159,7 @@ section { padding: 80px 0; }
         </svg>
       </div>
       <p class="problems-conclusion">MooovinならWhatsAppで<br class="sp-only"><span class="accent">希望条件を伝えるだけ</span>！</p>
-      <p class="problems-arrow-desc">WhatsAppでやり取りするだけで、<br class="sp-only"><span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>！<br class="sp-only">「日本に来ても住むところが無い」<br class="sp-only">という不安を無くしていただけます。<br class="sp-only">もちろん、条件が全て決まっていなくても<br class="sp-only">問題ございません！</p>
+      <p class="problems-arrow-desc">WhatsAppでやり取りするだけで、<br class="sp-only"><span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>！<br class="sp-only">「日本に来ても住むところが無い」<br class="sp-only">という不安を無くしていただけます。<br class="sp-only">もちろん、条件が全て決まっていなくても<br class="sp-only">問題ございません！<br class="sp-only">お気軽にお問い合わせください。</p>
     </div>
 
     <div class="problems-chat-image reveal">
