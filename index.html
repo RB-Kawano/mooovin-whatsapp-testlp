@@ -353,32 +353,18 @@ section { padding: 80px 0; }
 
 @media (max-width: 768px) {
   .hero { min-height: 560px; padding: 80px 0 30px; }
-  .hero-bg {
-    display: block;
-    grid-template-columns: none;
-    grid-template-rows: none;
-  }
-  .hero-bg-img {
-    position: absolute;
-    inset: 0;
-  }
-  .hero-bg-img.left {
-    background-position: 30% 25%;
-    -webkit-mask-image: linear-gradient(135deg, #000 35%, transparent 65%);
-    mask-image: linear-gradient(135deg, #000 35%, transparent 65%);
-  }
-  .hero-bg-img.right {
-    background-position: 70% 70%;
-    -webkit-mask-image: linear-gradient(135deg, transparent 35%, #000 65%);
-    mask-image: linear-gradient(135deg, transparent 35%, #000 65%);
-  }
+  .hero-bg { grid-template-columns: 1fr; grid-template-rows: 3fr 2fr; }
+  .hero-bg-img.left { background-position: center 22%; }
+  .hero-bg-img.right { background-position: center 28%; }
   .hero-bg-overlay {
     background:
       linear-gradient(180deg,
         rgba(255,255,255,0.6) 0%,
-        rgba(255,255,255,0.55) 35%,
-        rgba(255,255,255,0.75) 70%,
-        rgba(255,245,245,0.92) 100%);
+        rgba(255,255,255,0.55) 28%,
+        rgba(255,255,255,0.82) 52%,
+        rgba(255,255,255,0.88) 65%,
+        rgba(255,255,255,0.9) 78%,
+        rgba(255,245,245,0.95) 100%);
   }
   .hero-lead { margin-bottom: 20px; }
 }
@@ -1164,8 +1150,8 @@ section { padding: 80px 0; }
           <path d="M18 0 H38 V36 H54 L28 64 L2 36 H18 Z" fill="currentColor"/>
         </svg>
       </div>
-      <p class="problems-conclusion">MooovinならWhatsAppで<span class="accent">希望条件を伝えるだけ</span>！</p>
-      <p class="problems-arrow-desc">WhatsAppでやり取りするだけで、<span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>！「日本に来ても住むところが無い」という不安を無くしていただけます。もちろん、条件が全て決まっていなくても問題ございません！</p>
+      <p class="problems-conclusion">MooovinならWhatsAppで<br class="sp-only"><span class="accent">希望条件を伝えるだけ</span>！</p>
+      <p class="problems-arrow-desc">WhatsAppでやり取りするだけで、<br class="sp-only"><span class="highlight">ご希望条件に合わせた最適な物件をご提案</span>！<br class="sp-only">「日本に来ても住むところが無い」<br class="sp-only">という不安を無くしていただけます。<br class="sp-only">もちろん、条件が全て決まっていなくても<br class="sp-only">問題ございません！</p>
     </div>
 
     <div class="problems-chat-image reveal">
@@ -1182,7 +1168,7 @@ section { padding: 80px 0; }
     <div class="section-header reveal">
       <span class="section-eyebrow">About Mooovin</span>
       <h2 class="section-title"><span class="accent">Mooovin</span>とは？</h2>
-      <p class="section-lead">外国人入居可能物件のみ取り扱っているお部屋探しサービス！<br>世界中のどこからでも、日本の部屋探しが可能です。</p>
+      <p class="section-lead">外国人入居可能物件のみ取り扱っている<br class="sp-only">お部屋探しサービス！<br>世界中のどこからでも、<br class="sp-only">日本の部屋探しが可能です。</p>
     </div>
 
     <div class="reasons-merit-header reveal">
